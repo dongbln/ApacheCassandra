@@ -71,7 +71,7 @@ The name of keyspace is case-sensitive and in general, we specify the keyspaces 
 `user_id text,`<br>
 `datetime timestamp,`<br>
 `information text,`<br>
-`PRIMARY KEY (user_id, datetime)`<br>
+`PRIMARY KEY (user_id, datetime)`  (known as compound primary key) <br>
 `) WITH CLUSTERING ORDER BY (datetime DESC);`<br>
-,where `user_id`is the partition key. 
+,where `user_id`is the partition key (the first column). 
 Please note: Writing in decending order take longer time, but it improves read performance when decending order is required by applications.
