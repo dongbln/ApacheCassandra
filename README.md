@@ -49,6 +49,7 @@ we can use Apache Spark QL.
  - Type `DESCRIBE KEYSPACES;`to see all the keyspaces
  - Type `DESCRIBE KEYSPACE system;`, where `system` is the keyspace name
  - Type `exit` to exit the cql console
+ 
 #### Cassandra Create Keyspaces (For more than one node)
  - Type 
  - `CREATE KEYSPACE user`
