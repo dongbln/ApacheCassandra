@@ -51,14 +51,14 @@ we can use Apache Spark QL.
  - Type `exit` to exit the cql console
 
 ## Cassandra Keyspaces
-In generyl, we specify the keyspaces in lower case, however if required to have in upper case, you need to put the keypaces name in the qutation e.g., "MyKeySpace".
+In general, we specify the keyspaces in lower case, however if required to have in upper case, you need to put the keypaces name in the qutation e.g., "MyKeySpace".
 #### Cassandra Create Keyspaces (For more than one node)
- - Type 
+ - Type the following to allow a keyspace to span across more than one data center (dc):
  - `CREATE KEYSPACE user`
    `WITH REPLICATION = { 'class':'NetworkTopologyStrategy','dc1':3,'dc2':2};`
 
 #### Cassandra Create Keyspaces (For one node)
- - Type 
+ - Type the following  if you have only one node:
  - `CREATE KEYSPACE user`
    `WITH REPLICATION = { 'class':'SimpleStrategy','replication_factor': 1};`
 
