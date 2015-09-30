@@ -46,4 +46,15 @@ CQL is similar to SQL  without join functionalities. To use join funtionlatities
 we can use Apache Spark QL. 
  - Run cql  `bin/cqlsh`
  - Type e.g.,  `DESCRIBE CLUSTER;` to  see the cluster information
+ - Type `DESCRIBE KEYSPACES;`to see all the keyspaces
+ - Type `DESCRIBE KEYSPACE system;`, where `system` is the keyspace name
  - Type `exit` to exit the cql console
+#### Cassandra Create Keyspaces (For more than one node)
+ - Type 
+ - `CREATE KEYSPACE user`
+   `WITH REPLICATION = { 'class':'NetworkTopologyStrategy','dc1':3,'dc2':2};`
+
+#### Cassandra Create Keyspaces (For one node)
+ - Type 
+ - `CREATE KEYSPACE user`
+   `WITH REPLICATION = { 'class':'SimpleStrategy','replication_factor': 1};`
