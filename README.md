@@ -42,7 +42,6 @@ If you want to install Ubuntu using Vagrant use this command: <br>
 ### Cassandra CQL
 CQL is an option SQL like in Cassandra, you can also use Datastax API or astyanax <br>
 CQL is similar to SQL  without join functionalities 
-
  - Run cql  `bin/cqlsh`
  - Type e.g.,  `DESCRIBE CLUSTER;` to  see the cluster information
  - Type `exit` to exit the cql console
