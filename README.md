@@ -74,3 +74,4 @@ The name of keyspace is case-sensitive and in general, we specify the keyspaces 
 `PRIMARY KEY (user_id, datetime)`<br>
 `) WITH CLUSTERING ORDER BY (datetime DESC);`<br>
 ,where `user_id`is the partition key. 
+Please note: Writing in decending order take longer time, but it improves read performance when decending order is required by applications.
