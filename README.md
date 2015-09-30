@@ -73,3 +73,4 @@ The name of keyspace is case-sensitive and in general, we specify the keyspaces 
 `information text,`<br>
 `PRIMARY KEY (user_id, datetime)`<br>
 `) WITH CLUSTERING ORDER BY (datetime DESC);`<br>
+,where `user_id`is the partition key. 
