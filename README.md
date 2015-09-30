@@ -20,7 +20,11 @@ If you want to install Ubuntu using Vagrant use this command: <br>
 - Delete the tarball `rm apache-cassandra-2.2.1-bin.tar.gz`
 - `cd apache-cassandra-2.2.1`
 - Modify the config file /conf/cassandra.yml  `vim conf/cassandra.yaml ` for your purpose
-
+- Example: 
+- `data_file_directories:`
+    `- /var/lib/cassandra`
+- `commitlog_directory: /var/log/cassandra`
+  
 ### Setup the folder for Cassandra
 - Folder, where data is written to: `sudo mkdir /var/lib/cassandra`
 - Folder, where log is written to:  `sudo mkdir /var/log/cassandra`
