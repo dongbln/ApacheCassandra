@@ -75,3 +75,12 @@ The name of keyspace is case-sensitive and in general, we specify the keyspaces 
 `) WITH CLUSTERING ORDER BY (datetime DESC);`<br>
 ,where `user_id`is the partition key (the first column). 
 Please note: Writing in decending order take longer time, but it improves read performance when decending order is required by applications.
+
+## Cassandra  Write Data
+ - `INSERT INTO`command
+ - `COPY`command
+ - sstableloader tool for bulk loader
+
+### INSERT INTO command
+ - `INSERT INTO usertable (user_id,datetime,information) VALUES ( 'ID1234', '2015-08-21 07:20:12','Information 1');`
+ - `SELECT * FROM usertable ;``
