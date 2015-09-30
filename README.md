@@ -50,7 +50,7 @@ we can use Apache Spark QL.
  - Type `DESCRIBE KEYSPACE system;`, where `system` is the keyspace name
  - Type `exit` to exit the cql console
 
-## Cassandra Keyspaces
+## Cassandra Keyspaces (Databases)
 The name of keyspace is case-sensitive and in general, we specify the keyspaces in lower case, however if required to have in upper case, you need to put the keypaces name in the qutation e.g., "MyKeySpace".
 #### Cassandra Create Keyspaces (For more than one node)
  - Type the following to allow a keyspace to span across more than one data center (dc) with the number of its replication factor:
@@ -64,4 +64,12 @@ The name of keyspace is case-sensitive and in general, we specify the keyspaces 
 
 #### Drop Keyspaces
  - `DROP KEYSPACE user`
- - 
+ 
+## Cassandra Create  Tables 
+ - `USE user` to use the keyspace `user`
+ - `CREATE TABLE  userTable(`<br>
+`user_id text,`<br>
+`datetime timestamp,`<br>
+`information text,`<br>
+`PRIMARY KEY (user_id, datetime)`<br>
+`) WITH CLUSTERING ORDER BY (datetime DESC);`<br>
