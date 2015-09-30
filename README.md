@@ -61,3 +61,7 @@ In generyl, we specify the keyspaces in lower case, however if required to have 
  - Type 
  - `CREATE KEYSPACE user`
    `WITH REPLICATION = { 'class':'SimpleStrategy','replication_factor': 1};`
+
+#### Drop Keyspaces
+ - `DROP KEYSPACE user`
+ - 
