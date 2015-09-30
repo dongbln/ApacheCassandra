@@ -49,7 +49,9 @@ we can use Apache Spark QL.
  - Type `DESCRIBE KEYSPACES;`to see all the keyspaces
  - Type `DESCRIBE KEYSPACE system;`, where `system` is the keyspace name
  - Type `exit` to exit the cql console
- 
+
+## Cassandra Keyspaces
+In generyl, we specify the keyspaces in lower case, however if required to have in upper case, you need to put the keypaces name in the qutation e.g., "MyKeySpace".
 #### Cassandra Create Keyspaces (For more than one node)
  - Type 
  - `CREATE KEYSPACE user`
