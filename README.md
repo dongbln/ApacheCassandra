@@ -85,6 +85,11 @@ Please note: Writing in decending order take longer time, but it improves read p
  - `INSERT INTO usertable (user_id,datetime,information) VALUES ( 'ID1234', '2015-08-21 07:20:12','Information 1');`
  - `SELECT * FROM usertable ;``
  - `SELECT * FROM usertable where  information = 'Information 1';` This will not work, because it's not indexed by default
+ 
+### Secondary Indexes
+The secondary indexes in Cassandra does not increase the performance of the query like in relational databases. It privdes us to be able to use them in the `WHERE `clause.
+ - CREATE INDEX information_index ON usertable (information);
+ - Now you can query: `select * from usertable  where user_id = 'ID1234' and  information = 'Information 1';`
 ### COPYcommand
  - `COPY usertable(user_id,datetime,information)`<br>
 `FROM '/home/log/data.csv' `<br>
