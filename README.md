@@ -84,8 +84,9 @@ Please note: Writing in decending order take longer time, but it improves read p
 ### INSERT INTO command
  - `INSERT INTO usertable (user_id,datetime,information) VALUES ( 'ID1234', '2015-08-21 07:20:12','Information 1');`
  - `SELECT * FROM usertable ;``
- 
+ - `SELECT * FROM usertable where  information = 'Information 1';` This will not work, because it's not indexed by default
 ### COPYcommand
  - `COPY usertable(user_id,datetime,information)`<br>
 `FROM '/home/log/data.csv' `<br>
 `WITH header = true AND delimiter = '|'; `
+
