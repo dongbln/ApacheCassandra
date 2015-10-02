@@ -75,6 +75,15 @@ The name of keyspace is case-sensitive and in general, we specify the keyspaces 
 `) WITH CLUSTERING ORDER BY (datetime DESC);`<br>
 ,where `user_id`is the partition key (the first column). 
 Please note: Writing in decending order take longer time, but it improves read performance when decending order is required by applications.
+ - Create composite partition key  using this command:
+  - `CREATE TABLE  userTable(`<br>
+`user_id text,`<br>
+`date text,`<br>
+`time timestamp,`<br>
+`information text,`<br>
+`PRIMARY KEY ((user_id, date), time)`  (known as composite partition key) <br>
+`) WITH CLUSTERING ORDER BY (time DESC);`<br>
+
 
 ## Cassandra  Write Data
  - `INSERT INTO`command
@@ -90,6 +99,9 @@ Please note: Writing in decending order take longer time, but it improves read p
 The secondary indexes in Cassandra does not increase the performance of the query like in relational databases. It privdes us to be able to use them in the `WHERE `clause.
  - CREATE INDEX information_index ON usertable (information);
  - Now you can query: `select * from usertable  where user_id = 'ID1234' and  information = 'Information 1';`
+
+
+
 ### COPYcommand
  - `COPY usertable(user_id,datetime,information)`<br>
 `FROM '/home/log/data.csv' `<br>
