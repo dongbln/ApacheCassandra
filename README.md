@@ -92,7 +92,7 @@ Please note: Writing in decending order take longer time, but it improves read p
 
 ### INSERT INTO command
  - `INSERT INTO usertable (user_id,datetime,information) VALUES ( 'ID1234', '2015-08-21 07:20:12','Information 1');`
- - Insert with TTL 30 seconds: `INSERT INTO usertable (user_id,datetime,information) VALUES ( 'ID1234', '2015-08-21 07:20:12','Information 2') USING TTL 30 ;`. 
+ - Insert with TTL for 90days(7776000 seconds): `INSERT INTO usertable (user_id,datetime,information) VALUES ( 'ID1234', '2015-08-21 07:20:12','Information 2') USING TTL 7776000 ;`. 
  Here, you can specify the TTL to seconds, hours, or days.
  - `SELECT * FROM usertable ;``
  - `SELECT * FROM usertable where  information = 'Information 1';` This will not work, because it's not indexed by default
