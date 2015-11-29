@@ -129,6 +129,7 @@ The secondary indexes in Cassandra does not increase the performance of the quer
          UUID.fromString(customerID)
  );
  // None-Blocking query
+  List<String> customerIDList = new ArrayList<>();
  ResultSetFuture customerFuture = thisSession.executeAsync(q1);
     try {
         ResultSet rs1 = customerFuture.getUninterruptibly(5, TimeUnit.SECONDS);       
