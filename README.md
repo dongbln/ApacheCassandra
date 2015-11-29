@@ -109,3 +109,39 @@ The secondary indexes in Cassandra does not increase the performance of the quer
 `FROM '/home/log/data.csv' `<br>
 `WITH header = true AND delimiter = '|'; `
 
+### Cassandra Java API: Datasax
+```Java
+   String contactPoint1 = "localhost";
+   String semiColon = " ;";
+   String q1 = "Select * from myKeyspace.myTable ";
+
+   Cluster cluster = Cluster.builder().addContactPoint(contactPoint1).build();
+   Session thisSession = cluster.connect();
+   ResultSet myResultSet = thisSession.execute(q1);
+   // Do somthing with your resultSet
+   
+   
+   
+   // with preparestatement
+ String customerID = "fa4737c2-23ea-4862-9a1a-101b389374d4";
+ String query = "SELECT customerID FROM customers WHERE customerID = ? ;";
+ BoundStatement q1 = thisSession.prepare(query).bind(
+         UUID.fromString(customerID)
+ );
+ // None-Blocking query
+ ResultSetFuture customerFuture = thisSession.executeAsync(q1);
+    try {
+        ResultSet rs1 = customerFuture.getUninterruptibly(5, TimeUnit.SECONDS);       
+        // Test if rs1 has a result
+        if (rs1 != null) {
+         for (Row row : rs1) {
+             String aCustomerID = row.getUUID("customerID").toString();            
+             customerIDList.add(aCustomerID);
+         }
+        }
+        } catch (Exception e) {
+            // handle exception
+    }
+
+   
+ ```
