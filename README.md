@@ -146,3 +146,22 @@ The secondary indexes in Cassandra does not increase the performance of the quer
 
    
  ```
+### Example import data from Movielens
+1. Create a keyspace called movies ```CREATE KEYSPACE movies```
+2. ```USE movies```
+3. Create Table ``` CREATE TABLE movies(
+   movieId int,
+   title text,
+   genres text,
+   PRIMARY KEY (movieId)
+   ) ;  ```
+4. Import data to this table:
+``` COPY movies(movieId,title,genres) FROM '/Users/mrsbahnMac/dev/movielens/movies.csv'  WITH header = true AND delimiter = ',' ; ```
+5. ```SELECT * FROM movies LIMIT 100;```
+
+
+
+
+
+
+
